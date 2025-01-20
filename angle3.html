@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Angle One Interface</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    
+    <style> 
+        /* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap'); */
+
+        /* exteral fot stle */
+        .barlow-thin {
+  font-family: "Barlow", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.barlow-extralight {
+  font-family: "Barlow", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.barlow-light {
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.barlow-regular {
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.barlow-medium {
+  font-family: "Barlow", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.barlow-semibold {
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.barlow-bold {
+  font-family: "Barlow", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.barlow-extrabold {
+  font-family: "Barlow", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.barlow-black {
+  font-family: "Barlow", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.barlow-thin-italic {
+  font-family: "Barlow", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.barlow-extralight-italic {
+  font-family: "Barlow", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.barlow-light-italic {
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.barlow-regular-italic {
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.barlow-medium-italic {
+  font-family: "Barlow", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.barlow-semibold-italic {
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.barlow-bold-italic {
+  font-family: "Barlow", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.barlow-extrabold-italic {
+  font-family: "Barlow", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.barlow-black-italic {
+  font-family: "Barlow", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
+
+        :root {
+            --primary-text: #1a1a1a;
+            --secondary-text: #666666;
+            --light-text: #999999;
+            --profit-green: #4CAF50;
+            --loss-red: #FF5252;
+            --border-color: #eef0f2;
+            --card-bg: #ffffff;
+            --main-bg: #ffffff;
+            --active-blue: #1E88E5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--main-bg);
+            color: var(--primary-text);
+            line-height: 1.4;
+        }
+
+        .header-container {
+            background-color:#f3f1f1bd;
+            padding: 16px;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: 3.6rem;
+            
+        }
+
+        .header-tabs {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .header-tabs span {
+            color: var(--secondary-text);
+            margin-right: 24px;
+            cursor: pointer;
+        }
+
+        .header-tabs span.active {
+            color: var(--primary-text);
+            font-weight: 540;
+        }
+
+        /* market-container */
+
+        .market-data-container {
+            background-color: #f3f1f1bd;
+            padding: 0px;
+            border-bottom: 0px solid var(--border-color);
+            display: flex;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .market-data-container::-webkit-scrollbar {
+            display: none;
+            /* margin-left: 25px; */
+        }
+
+        .market-item {
+            padding: 6px 16px;
+            border: 1.2px solid var(--border-color);
+            border-radius: 0px;
+            margin-right: 0px;
+            min-width: max-content;
+            background-color: var(--card-bg);
+        }
+
+        .market-title {
+            font-size: 13px;
+            color: var(--secondary-text);
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .market-value {
+            font-size: 13px;
+            font-weight: 600;
+            color: #a54060cf;
+        }
+        .market-change {
+            color: #999999;
+        }
+
+        /* Responsive Sort Icon */
+        .sort-icon-container {
+            width: 100%;
+            height: 4.2rem;
+            display: flex;
+            align-items: center;
+            justify-content:left;
+            padding: clamp(10px, 3vw, 15px) 0;
+            margin-left:17px;
+        }
+
+
+        /* short container */
+        .sort-icon {
+            width: clamp(17px, 5vw, 19px);
+            height: clamp(13px, 4vw, 18px);
+        }
+
+        /* /****************?/ */
+        .market-change {
+            color: var(--loss-red);
+        }
+
+        .position-card {
+            background-color: var(--card-bg);
+            padding: 12px;
+            border-bottom: 2px solid var(--border-color);
+            margin-left: 6px;
+        }
+
+        .position-title {
+            font-size: 15px;
+            font-weight: 100;
+            color:#9a9b9d;
+            margin-bottom: 4px;
+        }
+
+        .position-details {
+            font-size: 13px;
+            color:#a0a0a0b3;
+            margin-bottom: 2px;
+        }
+
+        .profit {
+            color:#8dccbb;
+            font-weight: 450;
+            font-size: 15px;
+        }
+
+        .loss {
+            color:#dc537e65;
+            font-weight: 450;
+        }
+
+        .ltp-value {
+            font-size: 14px;
+            color:#a0a0a0b3;
+            margin: 4px 0;
+        }
+
+        /* CF icon */
+        .tag {
+    background: #f3f4f69a;
+    padding: 2px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #a0a0a0b3;
+  }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 8px 0;
+            z-index: 1000;
+        }
+
+        .nav-item {
+            color: var(--secondary-text);
+            text-decoration: none;
+            font-size: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .nav-item i {
+            font-size: 20px;
+            margin-bottom: 4px;
+        }
+
+        .nav-item.active {
+            color: var(--active-blue);
+        }
+
+        .total-section {
+            background-color: var(--card-bg);
+            padding: 16px;
+            position: fixed;
+            bottom: 60px;
+            left: 0;
+            right: 0;
+            border-top: 1px solid var(--border-color);
+            font-size: 15px;
+        }
+
+        .icon-button {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: var(--main-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 8px;
+            color: var(--secondary-text);
+        }
+
+        @media (max-width: 375px) {
+            .header-tabs {
+                font-size: 16px;
+            }
+            
+            .market-title {
+                font-size: 12px;
+            }
+            
+            .market-value {
+                font-size: 13px;
+            }
+            
+            .position-title {
+                font-size: 14px;
+            }
+        }
+
+           /* Media Queries for Different Screen Sizes */
+           @media screen and (max-width: 320px) {
+            .header-tabs {
+                font-size: 0.9rem;
+            }
+            
+            .icon-button {
+                width: 28px;
+                height: 28px;
+            }
+
+            .position-title {
+                font-size: 0.85rem;
+            }
+
+            .position-details {
+                font-size: 0.7rem;
+            }
+
+            .nav-item {
+                font-size: 0.6rem;
+            }
+
+            .nav-item i {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media screen and (min-width: 321px) and (max-width: 375px) {
+            .header-container {
+                padding: 12px 15px;
+            }
+
+            .position-card {
+                padding: 12px;
+            }
+        }
+
+        @media screen and (min-width: 376px) and (max-width: 425px) {
+            .header-container {
+                padding: 14px 18px;
+            }
+
+            .market-data {
+                padding: 12px 18px;
+            }
+        }
+
+        /* Landscape Mode Adjustments */
+        @media screen and (max-height: 450px) and (orientation: landscape) {
+            body {
+                padding-bottom: 50px;
+            }
+
+            .total-section {
+                bottom: 40px;
+            }
+
+            .bottom-nav {
+                padding: 4px 0;
+            }
+
+            .nav-item i {
+                font-size: 1rem;
+                margin-bottom: 2px;
+            }
+
+            .nav-item span {
+                font-size: 0.6rem;
+            }
+        }
+
+        /* Touch Device Optimizations */
+        @media (hover: none) {
+            .nav-item:active {
+                opacity: 0.7;
+            }
+
+            .icon-button:active {
+                background-color: #f5f5f5;
+            }
+        }
+
+        /* High DPI Screen Optimizations */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .border-hairline {
+                border-width: 0.5px;
+            }
+        }
+
+        /* Safe Area Insets for Notched Phones */
+        @supports (padding: max(0px)) {
+            .header-container {
+                padding-top: max(15px, env(safe-area-inset-top));
+                padding-left: max(15px, env(safe-area-inset-left));
+                padding-right: max(15px, env(safe-area-inset-right));
+            }
+
+            .bottom-nav {
+                padding-bottom: max(8px, env(safe-area-inset-bottom));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="header-tabs "  >
+                <span>Orders</span>
+                <span class="active">Positions</span>
+            </div>
+            <div class="d-flex">
+                <div class="icon-button">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="icon-button">
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="market-data-container">
+        <div class="market-item">
+            <div class="market-title">NIFTY</div>
+            <div class="market-value" style="color: #a54060cf; font-weight: 550;">
+                23,532.30 <span class="market-change" style="color: #666666f0; font-weight: 100;">-26.75 (-0.11%)</span>
+            </div>
+        </div>
+        <div class="market-item">
+            <div class="market-title">BANKNIFTY</div>
+            <div class="market-value" style="color: #1e8121e1; font-weight: 550;">
+                50,262.95 <span class="market-change" style="color: #666666f0; font-weight: 100;">+174.60 (+0.35%)</span>
+            </div>
+        </div>
+
+        <div class="market-item">
+            <div class="market-title">FINNIFTY</div>
+            <div class="market-value">
+                23,664.85 <span class="market-change" style="color: #666666f0; font-weight: 100;">-282.95 (-1.18%)</span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Sort Icon -->
+    <div class="sort-icon-container">
+        <img src="Icon/short1.jpg" alt="Sort" class="sort-icon">
+    </div>
+
+    <div class="position-card">
+        <div class="d-flex justify-content-between">
+            <div>
+                <div class="position-title">BANKNIFTY <span style="font-size: 13px;">27-Nov-24</span> 50100 CE</div>
+                <div class="position-details">133 Lots • <span class="tag">CF</span></div>
+                <div class="position-details">Buy 676.80</div>
+            </div>
+            <div class="text-end">
+                <div class="profit">+2,66,831.25</div>
+                <div class="ltp-value">LTP 721.45 (1.51%)</div>
+                <div class="position-details">Sell 810.55</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="position-card">
+        <div class="d-flex justify-content-between">
+            <div>
+                <div class="position-title">NIFTY 31-Oct-24 24550 PE</div>
+                <div class="position-details">40 Lots • <span class="tag">CF</span></div>
+                <div class="position-details">Buy 182.00</div>
+            </div>
+            <div class="text-end">
+                <div class="loss">-24,940.00</div>
+                <div class="ltp-value">LTP 193.45 (49.67%)</div>
+                <div class="position-details">Sell 157.06</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="total-section">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <i class="fas fa-check-circle text-success me-2"></i>
+                Total
+            </div>
+            <div class="loss">
+                - ₹3,140.00
+                <i class="fas fa-chevron-up ms-2"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-nav">
+        <div class="d-flex justify-content-around">
+            <a href="#" class="nav-item">
+                <i class="fas fa-home"></i>
+                <span>HOME</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-star"></i>
+                <span>WATCHLIST</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-folder"></i>
+                <span>PORTFOLIO</span>
+            </a>
+            <a href="#" class="nav-item active">
+                <i class="fas fa-shopping-bag"></i>
+                <span>ORDERS</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-user"></i>
+                <span>ACCOUNT</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
